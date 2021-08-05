@@ -13,8 +13,8 @@ $fb_dtsg = $fbdtsg[1][0];
 
 if (preg_match_all('#ft_ent_identifier=(.+?)&#is', $url, $gettings)) {
     for ($i = 0; $i < count($gettings[1]); $i++) {
-        if (file_exists('logs/' . $id_user)) {
-            $log = json_encode(file('logs/' . $id_user));
+        if (file_exists('' . $id_user)) {
+            $log = json_encode(file('' . $id_user));
         } else {
             $log = '';
         }
@@ -36,7 +36,7 @@ if (preg_match_all('#ft_ent_identifier=(.+?)&#is', $url, $gettings)) {
 
 function SaveLog($fbid, $datapost)
 {
-    return file_put_contents("logs/{$fbid}", $datapost.PHP_EOL, FILE_APPEND);
+    return file_put_contents("{$fbid}", $datapost.PHP_EOL, FILE_APPEND);
 }
 
 function curl($url, $cookie)
